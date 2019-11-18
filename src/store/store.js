@@ -6,19 +6,20 @@ Vue.use(Vuex); // activa la propiedad store en la instacia principal, ver main.j
 
 export const store = new Vuex.Store({
     state: {
-        cantidad: 0
+        productos: [
+            { nombre: 'Steam Link', precio: 50 },
+            { nombre: 'Steam Controller', precio: 30 },
+            { nombre: 'Axiom Verge', precio: 17 }
+        ],
+        carro: []
+    },
+    getters: {
+        totalCompra: (state) => state.carro.reduce((total, producto) => total + producto.precio, 0)
     },
     mutations: {
-        aumentar: (state, cantidad) => state.cantidad += cantidad,
-        reducir: (state, cantidad) => state.cantidad -= cantidad
-    },
-    actions: {
-        aumentarAsync: (context, cantidad) => {
-            setTimeout(() => context.commit('aumentar', cantidad), 1000)
-        },
-        reducirAsync: ({ commit }, { cantidad }) => {
-            setTimeout(() => commit('reducir', cantidad), 1000)
-        }
+        nuevoProducto: (state, producto) => state.productos.unshift(producto),
+        comprarProducto: (state, indice) => state.carro.unshift(state.productos[indice]),
+        quitarProducto: (state, indice) => state.carro.splice(indice, 1)
     }
 });
 

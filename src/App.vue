@@ -1,11 +1,15 @@
 <template>
-  <contador></contador>
+  <section>
+    <productos></productos>
+    <carro></carro>
+  </section>
 </template>
 
 <script>
-  import Contador from './components/Contador.vue';
+  import Carro from './components/Carro.vue';
+  import Productos from './components/Productos.vue';
   export default {
-    components: { Contador },
+    components: { Carro, Productos },
   }
 </script>
 
