@@ -9,12 +9,15 @@ export const store = new Vuex.Store({
         cantidad: 0
     },
     mutations: {
-        aumentar: (state) => state.cantidad++,
-        reducir: (state) => state.cantidad--
+        aumentar: (state, cantidad) => state.cantidad += cantidad,
+        reducir: (state, cantidad) => state.cantidad -= cantidad
     },
     actions: {
-        aumentar(context) {
-            context.commit('aumentar')
+        aumentarAsync: (context, cantidad) => {
+            setTimeout(() => context.commit('aumentar', cantidad), 1000)
+        },
+        reducirAsync: ({ commit }, { cantidad }) => {
+            setTimeout(() => commit('reducir', cantidad), 1000)
         }
     }
 });
