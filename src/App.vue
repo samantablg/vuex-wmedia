@@ -1,24 +1,21 @@
 <template>
-  <contador></contador>
+<h1> Hola me llamo {{ nombre }} {{ apellido }} y vivo en {{ ciudad }}</h1>
 </template>
 
-<!-- <contador :cantidad="cantidad"
-            @aumentar="cantidad++"
-            @reducir="cantidad--">
-  </contador> -->
-
-  <!-- data() {
-    return {
-      cantidad: 0
-    }
-  } -->
-
 <script>
-import Contador from "./components/Contador.vue";
+  import { mapState } from 'vuex';
 export default {
-  components: { Contador },
+  /* computed: mapState({
+      nombre: (state) => state.nombre,
+      apellido: (state) => state.apellido
+  }) */
+  computed: mapState(['nombre', 'apellido', 'ciudad']) // me trae esos atributos del state
 }
 </script>
+
+<!--nombre: function(state) {
+      return state.nombre
+    }-->
 
 <style>
 </style>
