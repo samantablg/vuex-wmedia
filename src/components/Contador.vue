@@ -1,8 +1,8 @@
 <template>
   <section>
     <h1>Cantidad: {{ cantidad }}</h1>
-    <button @click="aumentar">Aumentar</button>
     <button @click="reducir">Reducir</button>
+    <button @click="aumentar">Aumentar</button>
   </section>
 </template>
 

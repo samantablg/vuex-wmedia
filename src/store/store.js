@@ -11,5 +11,20 @@ export const store = new Vuex.Store({
     mutations: {
         aumentar: (state) => state.cantidad++,
         reducir: (state) => state.cantidad--
+    },
+    actions: {
+        aumentar(context) {
+            context.commit('aumentar')
+        }
     }
 });
+
+
+/*
+Las acciones son similares a las mutaciones. La diferencia radica en que las acciones no actúan directamente sobre el estado sino que le hablan a las
+mutaciones, commit sobre una mutación, y la mutación finalmente modifica el estado. Además las acciones pueden contener operaciones asíncronas,
+mientras que las mutaciones no.
+
+Para acciones asíncronas debe existir una conexión entre el estado y las mutaciones
+
+*/
