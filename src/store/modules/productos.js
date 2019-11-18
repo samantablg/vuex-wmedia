@@ -5,7 +5,5 @@ const productos = [
 ];
 
 export default {
-    state: {
-        productos
-    }
+    state: productos
 }

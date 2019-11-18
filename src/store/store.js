@@ -9,8 +9,8 @@ Vue.use(Vuex); // activa la propiedad store en la instacia principal, ver main.j
 
 export const store = new Vuex.Store({
     modules: {
-        productos: productos, // no es necesario hacer productos: productos porque valor y atibuto coinciden
-        carro: carro
+        productos, // no es necesario hacer productos: productos porque valor y atibuto coinciden
+        carro
     },
     getters: getters,
     mutations: mutations
