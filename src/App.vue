@@ -1,20 +1,22 @@
 <template>
-  <!-- <contador :cantidad="cantidad"
+  <contador></contador>
+</template>
+
+<!-- <contador :cantidad="cantidad"
             @aumentar="cantidad++"
             @reducir="cantidad--">
   </contador> -->
-  <contador></contador>
-</template>
+
+  <!-- data() {
+    return {
+      cantidad: 0
+    }
+  } -->
 
 <script>
 import Contador from "./components/Contador.vue";
 export default {
   components: { Contador },
-  /* data() {
-    return {
-      cantidad: 0
-    }
-  } */
 }
 </script>
 

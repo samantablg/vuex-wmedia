@@ -1,11 +1,9 @@
 <template>
-<div>
   <div>
         <h1>Contador: {{ cantidad }}</h1>
         <button @click="aumentar">Aumentar</button>
         <button @click="reducir">Reducir</button>
     </div>
-</div>
 </template>
 
 <script>
@@ -13,7 +11,6 @@ export default {
   // props: ['cantidad'],
   methods: {
     aumentar() {
-      /* this.$emit('aumentar'); */
       this.$store.state.cantidad++;
     },
     reducir() {
@@ -23,7 +20,7 @@ export default {
   },
   computed: {
     cantidad() {
-      return this.$store.sate.cantidad;
+      return this.$store.state.cantidad;
     }
   }
 
